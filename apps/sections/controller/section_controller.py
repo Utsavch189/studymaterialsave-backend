@@ -4,6 +4,8 @@ from core.utils.decorators.handelException import handel_exception
 from core.utils.decorators.logger import log
 from apps.sections.dto.addSection.main import AddSectionDTO
 from apps.sections.dto.modifySection.main import ModifySectionDTO
+from apps.sections.dto.getSection.main import GetSectionDTO
+from apps.sections.dto.deleteSection.main import DeleteSectionDTO
 import logging
 from apps.sections.service.addSection.main import AddSectionService
 from apps.sections.service.getSection.main import GetSectionService
@@ -16,26 +18,28 @@ class SectionController(APIView):
 
     @handel_exception
     @log(logger=logger)
-    def get(self,request,id=None):
-        message,status=GetSectionService().get(request,id)
+    def get(self,request):
+        _dto=GetSectionDTO(**request.data)
+        message,status=GetSectionService().get(request,_dto)
         return Response(message,status=status)
 
     @handel_exception
     @log(logger=logger)
-    def post(self,request,id=None):
+    def post(self,request):
         _dto=AddSectionDTO(**request.data)
         message,status=AddSectionService().add(_dto,request)
         return Response(message,status=status)
 
     @handel_exception
     @log(logger=logger)
-    def put(self,request,id=None):
+    def put(self,request):
         _dto=ModifySectionDTO(**request.data)
-        message,status=ModifySectionService().modify(id,_dto)
+        message,status=ModifySectionService().modify(_dto)
         return Response(message,status=status)
 
     @handel_exception
     @log(logger=logger)
-    def delete(self,request,id=None):
-        message,status=DeleteSectionService().delete(id)
+    def delete(self,request):
+        _dto=DeleteSectionDTO(**request.data)
+        message,status=DeleteSectionService().delete(_dto)
         return Response(message,status=status)

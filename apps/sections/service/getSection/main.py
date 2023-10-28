@@ -3,6 +3,7 @@ from apps.sections.serializers.sectionReturnData.main import SectionReturnRespSe
 from rest_framework import status
 from apps.sections.repo_dataContainers.main import AllSections
 import json
+from apps.sections.dto.getSection.main import GetSectionDTO
 
 class GetSectionService:
 
@@ -15,20 +16,17 @@ class GetSectionService:
     
     def _getASection(self,id)->Section:
         try:
-            if Section.objects.filter(section_id=id).exists():
-                return Section.objects.get(section_id=id)
-            return None
+            return Section.objects.get(section_id=id)  
         except Exception as e:
             raise Exception(str(e))
 
-    def get(self,request:object,id:str)->tuple:
+    def get(self,request:object,dto:GetSectionDTO)->tuple:
         try:
-            if id:
-                _data=self._getASection(id)
-                if _data:
-                    _result=SectionReturnRespSerializer(_data).data
-                else:
-                    return ({"message":"not found!"},status.HTTP_404_NOT_FOUND)
+            _id=dto.section_id
+            if _id:
+                _data=self._getASection(_id)
+                _result=SectionReturnRespSerializer(_data).data
+                
             else:
                 _data=self._getAllSections(request)
                 _result=json.loads(json.dumps(SectionReturnRespSerializer(_data,many=True).data))

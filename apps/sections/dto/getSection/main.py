@@ -1,18 +1,17 @@
 from pydantic import BaseModel,validator,constr
 from apps.sections.models.section import Section
 
-class ModifySectionDTO(BaseModel):
-    section_id:constr(min_length=1,max_length=50,strip_whitespace=True)
-    section_name:constr(max_length=100,strip_whitespace=True)
-    section_about:constr(max_length=150,strip_whitespace=True)
+class GetSectionDTO(BaseModel):
+    section_id:constr(min_length=1,max_length=50,strip_whitespace=True)="None"
 
     @validator('section_id',allow_reuse=True,always=True)
     def validate_id(cls,value):
         try:
-            if value:
+            if value!="None":
                 if Section.objects.filter(section_id=value).exists():
                     return value
                 else:
                     raise Exception("section is not found!")
+            return None
         except Exception as e:
             raise Exception(str(e))

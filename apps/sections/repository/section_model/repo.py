@@ -1,13 +1,14 @@
 from django.db import models
 from apps.sections.repo_dataContainers.main import AllSections
+from .irepo import I_SectionModelRepo
 
-class SectionModelRepo(models.Manager):
+class SectionModelRepo(models.Manager,I_SectionModelRepo):
 
     def __init__(self) -> None:
         from django.db import connection
         self.conn=connection
         
-    def get_allSections(self,user_id):
+    def get_allSections(self,user_id:str)->list[AllSections]:
         try:
             res:list[AllSections]=[]
             with self.conn.cursor() as c:

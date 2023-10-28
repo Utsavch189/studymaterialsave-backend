@@ -93,3 +93,185 @@ INFO : [28/Oct/2023 12:54:25 logger 7 9852 12644 package : apps.sections.control
 INFO : [28/Oct/2023 12:54:37 logger 7 9852 12644 package : apps.sections.controller.section_controller --> position : SectionController.put]
 INFO : [28/Oct/2023 12:54:52 logger 7 9852 12644 package : apps.sections.controller.section_controller --> position : SectionController.put]
 INFO : [28/Oct/2023 12:55:00 logger 7 9852 12644 package : apps.sections.controller.section_controller --> position : SectionController.put]
+INFO : [28/Oct/2023 18:47:44 logger 7 3016 14156 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 18:47:44 logger 10 3016 14156 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : get() missing 2 required positional arguments: 'self' and 'request']
+INFO : [28/Oct/2023 18:47:44 logger 7 3016 6228 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 18:47:44 logger 10 3016 6228 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : get() missing 2 required positional arguments: 'self' and 'request']
+INFO : [28/Oct/2023 19:17:38 logger 7 8264 3800 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:17:38 logger 10 8264 3800 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:32:30 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.put]
+INFO : [28/Oct/2023 19:33:02 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.delete]
+ERROR : [28/Oct/2023 19:33:02 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.delete --> exception : section is not found!]
+INFO : [28/Oct/2023 19:33:06 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.delete]
+ERROR : [28/Oct/2023 19:33:06 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.delete --> exception : section is not found!]
+INFO : [28/Oct/2023 19:33:14 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:14 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:19 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:19 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:20 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:20 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:21 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:21 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:22 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:22 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:23 logger 7 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:23 logger 10 2792 14332 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:33:59 logger 7 10736 9148 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:33:59 logger 10 10736 9148 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:34:00 logger 7 10736 9148 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:34:00 logger 10 10736 9148 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:34:34 logger 7 10736 9148 package : apps.sections.controller.section_controller --> position : SectionController.get]
+INFO : [28/Oct/2023 19:35:19 logger 7 5624 2260 package : apps.auths.controller.login_controller --> position : Login.post]
+INFO : [28/Oct/2023 19:35:22 logger 7 5624 2260 package : apps.sections.controller.section_controller --> position : SectionController.get]
+INFO : [28/Oct/2023 19:35:26 logger 7 5624 2260 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:35:26 logger 10 5624 2260 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:35:54 logger 7 3596 9880 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:35:54 logger 10 3596 9880 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:35:55 logger 7 3596 9880 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:35:55 logger 10 3596 9880 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:36:06 logger 7 6624 11588 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:36:06 logger 10 6624 11588 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  String should have at least 1 characters [type=string_too_short, input_value='', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_too_short]
+INFO : [28/Oct/2023 19:36:20 logger 7 7732 9884 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:36:20 logger 10 7732 9884 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:36:41 logger 7 920 11096 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:36:41 logger 10 920 11096 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:37:06 logger 7 10312 11708 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:37:06 logger 10 10312 11708 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:37:08 logger 7 10312 11708 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:37:08 logger 10 10312 11708 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:37:27 logger 7 10060 2872 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:37:27 logger 10 10060 2872 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:38:07 logger 7 12320 8416 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:07 logger 10 12320 8416 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:38:30 logger 7 6568 1744 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:30 logger 10 6568 1744 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.4/v/missing]
+INFO : [28/Oct/2023 19:38:32 logger 7 6568 1744 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:32 logger 10 6568 1744 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.4/v/missing]
+INFO : [28/Oct/2023 19:38:40 logger 7 10996 7892 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:40 logger 10 10996 7892 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:38:47 logger 7 7496 3512 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:47 logger 10 7496 3512 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=<class 'str'>, input_type=type]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:38:49 logger 7 7496 3512 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:38:49 logger 10 7496 3512 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=<class 'str'>, input_type=type]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:39:37 logger 7 4236 13596 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:39:37 logger 10 4236 13596 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:39:49 logger 7 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:39:49 logger 10 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:40:28 logger 7 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.delete]
+ERROR : [28/Oct/2023 19:40:28 logger 10 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.delete --> exception : section is not found!]
+INFO : [28/Oct/2023 19:40:32 logger 7 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.delete]
+INFO : [28/Oct/2023 19:40:36 logger 7 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.put]
+ERROR : [28/Oct/2023 19:40:36 logger 10 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.put --> exception : section is not found!]
+INFO : [28/Oct/2023 19:40:42 logger 7 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:40:42 logger 10 10236 10276 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:41:03 logger 7 13252 13780 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:41:03 logger 10 13252 13780 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:42:57 logger 7 9352 10956 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:42:57 logger 10 9352 10956 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.4/v/missing]
+INFO : [28/Oct/2023 19:42:58 logger 7 9352 10956 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:42:58 logger 10 9352 10956 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.4/v/missing]
+INFO : [28/Oct/2023 19:43:07 logger 7 10380 2988 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:43:07 logger 10 10380 2988 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:43:08 logger 7 10380 2988 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:43:08 logger 10 10380 2988 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : 1 validation error for GetSectionDTO
+section_id
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.4/v/string_type]
+INFO : [28/Oct/2023 19:43:26 logger 7 10568 12364 package : apps.sections.controller.section_controller --> position : SectionController.get]
+ERROR : [28/Oct/2023 19:43:26 logger 10 10568 12364 package : apps.sections.controller.section_controller --> position : SectionController.get --> exception : section is not found!]
+INFO : [28/Oct/2023 19:43:48 logger 7 7840 9188 package : apps.sections.controller.section_controller --> position : SectionController.get]
+INFO : [28/Oct/2023 19:49:57 logger 7 11028 11144 package : apps.auths.controller.login_controller --> position : Login.post]
+INFO : [28/Oct/2023 19:49:59 logger 7 11028 11144 package : apps.sections.controller.section_controller --> position : SectionController.get]

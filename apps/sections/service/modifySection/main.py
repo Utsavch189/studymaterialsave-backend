@@ -5,13 +5,10 @@ from apps.sections.serializers.sectionReturnData.main import SectionReturnRespSe
 
 class ModifySectionService:
 
-    def modify(self,id:str,dto:ModifySectionDTO)->tuple:
+    def modify(self,dto:ModifySectionDTO)->tuple:
         try:
-            if not id:
-                return ({"message":"section_id is needed!"},status.HTTP_406_NOT_ACCEPTABLE)
-            
-            if Section.objects.filter(section_id=id).exists():
-                section=Section.objects.get(section_id=id)
+            if Section.objects.filter(section_id=dto.section_id).exists():
+                section=Section.objects.get(section_id=dto.section_id)
                 section.section_name=dto.section_name
                 section.section_about=dto.section_about
                 _data=SectionReturnRespSerializer(section).data
