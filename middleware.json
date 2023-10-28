@@ -1,0 +1,5 @@
+{
+    "paths": [
+        { "app": "apps.sections", "endpoint": "sections" }
+    ]
+}
