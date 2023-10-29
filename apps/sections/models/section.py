@@ -12,5 +12,10 @@ class Section(models.Model):
 
     repo=SectionModelRepo
 
+    class Meta:
+        indexes=[
+            models.Index(fields=['section_name'])
+        ]
+
     def __str__(self) -> str:
         return f"{self.section_name} created by {self.user.full_name}"

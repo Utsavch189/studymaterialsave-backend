@@ -1,5 +1,5 @@
 from django.db import models
-from apps.sections.repo_dataContainers.main import AllSections
+from apps.sections.dataContainers.main import AllSections
 from .irepo import I_SectionModelRepo
 
 class SectionModelRepo(models.Manager,I_SectionModelRepo):

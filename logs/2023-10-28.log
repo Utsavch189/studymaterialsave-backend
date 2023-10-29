@@ -275,3 +275,5 @@ ERROR : [28/Oct/2023 19:43:26 logger 10 10568 12364 package : apps.sections.cont
 INFO : [28/Oct/2023 19:43:48 logger 7 7840 9188 package : apps.sections.controller.section_controller --> position : SectionController.get]
 INFO : [28/Oct/2023 19:49:57 logger 7 11028 11144 package : apps.auths.controller.login_controller --> position : Login.post]
 INFO : [28/Oct/2023 19:49:59 logger 7 11028 11144 package : apps.sections.controller.section_controller --> position : SectionController.get]
+INFO : [28/Oct/2023 20:11:27 logger 7 3756 10248 package : apps.auths.controller.login_controller --> position : Login.post]
+INFO : [28/Oct/2023 20:11:30 logger 7 3756 10248 package : apps.sections.controller.section_controller --> position : SectionController.get]

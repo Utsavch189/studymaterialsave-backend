@@ -21,25 +21,25 @@ class SectionController(APIView):
     def get(self,request):
         _dto=GetSectionDTO(**request.data)
         message,status=GetSectionService().get(request,_dto)
-        return Response(message,status=status)
+        return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def post(self,request):
         _dto=AddSectionDTO(**request.data)
         message,status=AddSectionService().add(_dto,request)
-        return Response(message,status=status)
+        return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def put(self,request):
         _dto=ModifySectionDTO(**request.data)
         message,status=ModifySectionService().modify(_dto)
-        return Response(message,status=status)
+        return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def delete(self,request):
         _dto=DeleteSectionDTO(**request.data)
         message,status=DeleteSectionService().delete(_dto)
-        return Response(message,status=status)
+        return Response(message,status=status,request=request)

@@ -2,6 +2,7 @@ from pydantic import BaseModel,validator,constr
 import re
 from ...models.user import User
 from django.contrib.auth.hashers import make_password
+from apps.auths.models.profile_pic_meta import ProfilePicMeta
 
 email_regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
 
@@ -14,15 +15,6 @@ class RegisterMainDTO(BaseModel):
     phone:constr(min_length=1,max_length=10,strip_whitespace=True)
     profile_pic_name:constr(strip_whitespace=True)=None
     profile_pic_base64:constr(strip_whitespace=True)=None
-    
-
-    @validator('profile_pic_base64',allow_reuse=True,always=True)
-    def profile_pic_base64(cls,value):
-        if value:
-            if len(value.split(','))>1:
-                return value.split(',')[1]
-            else:
-                return value
 
     @validator('password',allow_reuse=True,always=True)
     def check_password(cls,value,values):
@@ -70,5 +62,16 @@ class RegisterMainDTO(BaseModel):
                     return value
                 else:
                     raise ValueError("phone number already exists!")
+        except Exception as e:
+            raise Exception(str(e))
+    
+    @validator('profile_pic_name',allow_reuse=True,always=True)
+    def profile_pic_name_exists(cls,value):
+        try:
+            if value:
+                if not ProfilePicMeta.objects.filter(picture_name=value).exists():
+                    return value
+                else:
+                    raise ValueError("picture already exists!")
         except Exception as e:
             raise Exception(str(e))

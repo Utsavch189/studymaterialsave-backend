@@ -1,5 +1,5 @@
 from abc import ABC,abstractstaticmethod
-from apps.sections.repo_dataContainers.main import AllSections
+from apps.sections.dataContainers.main import AllSections
 
 class I_SectionModelRepo(ABC):
 

@@ -16,13 +16,13 @@ class CDN:
         except Exception as e:
             raise Exception(str(e))
     
-    def upload(self,source:str,destination:str)->dict:
+    def upload(self,source:str,destination:str,resource_type:str='auto')->dict:
         try:
             res=cloudinary.uploader.upload(
                 self._decode.decodes(source),
                 use_filename=True,
                 unique_filename=False,
-                resource_type='auto',
+                resource_type=resource_type,
                 public_id=destination
             )
             return res

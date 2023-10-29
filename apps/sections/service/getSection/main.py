@@ -1,7 +1,7 @@
 from apps.sections.models.section import Section
 from apps.sections.serializers.sectionReturnData.main import SectionReturnRespSerializer
 from rest_framework import status
-from apps.sections.repo_dataContainers.main import AllSections
+from apps.sections.dataContainers.main import AllSections
 import json
 from apps.sections.dto.getSection.main import GetSectionDTO
 
