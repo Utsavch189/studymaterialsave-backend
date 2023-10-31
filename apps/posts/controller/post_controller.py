@@ -3,10 +3,16 @@ from rest_framework.views import APIView
 from core.utils.decorators.handelException import handel_exception
 from core.utils.decorators.logger import log
 import logging
+
 from apps.posts.dto.addPost.main import AddPostDTO
 from apps.posts.dto.getPost.main import GetPostDTO
+from apps.posts.dto.deletePost.main import DeletePostDTO
+from apps.posts.dto.modifyPost.main import ModifyPostDTO
+
 from apps.posts.service.addPost.main import AddPostService
 from apps.posts.service.getPost.main import GetPostService
+from apps.posts.service.deletePost.main import DeletePostService
+from apps.posts.service.modifyPost.main import ModifyPostService
 
 logger=logging.getLogger('mylogger')
 
@@ -29,13 +35,13 @@ class PostController(APIView):
     @handel_exception
     @log(logger=logger)
     def put(self,request):
-        
-        message,status={}
+        _dto=ModifyPostDTO(**request.data)
+        message,status=ModifyPostService(_dto).modify()
         return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def delete(self,request):
-        
-        message,status={}
+        _dto=DeletePostDTO(**request.data)
+        message,status=DeletePostService(_dto).delete()
         return Response(message,status=status,request=request)

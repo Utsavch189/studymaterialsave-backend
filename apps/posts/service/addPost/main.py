@@ -9,6 +9,8 @@ from core.utils.cdn.main import CDN
 import concurrent.futures
 from rest_framework import status
 from apps.posts.serializers.getPosts import PostSerializer
+from apps.posts.dataContainers.main import PostData, PostMetaData
+import json
 
 class AddPostService:
 
@@ -67,10 +69,18 @@ class AddPostService:
     @transaction.atomic
     def add(self)->tuple:
         try:
-            _postmeta:list[PostFileMeta]=[]
+            
             with concurrent.futures.ThreadPoolExecutor() as executor:
                 _files=self._dto.files
                 _post=self._create_post()
+
+                _post_dataContainer=PostData(
+                    post_id=_post.post_id,
+                    title=_post.title,
+                    about=_post.about,
+                    notes=_post.notes,
+                    created_at=_post.created_at
+                )
 
                 if self._dto.files:
                     _uploads=executor.map(self._upload_files,_files)
@@ -82,13 +92,19 @@ class AddPostService:
                             upload[1]
                         )
                         _postMeta.save()
-                        _postmeta.append(_postMeta)
+                        _postmeta_dataContainer=PostMetaData(
+                            post_file_meta_id=_postMeta.post_file_meta_id,
+                            file_name=_postMeta.file_name,
+                            file_url=_postMeta.file_url,
+                            public_id=_postMeta.public_id,
+                            resource_type=_postMeta.resource_type,
+                            types=_postMeta.types
+                        )
+                        _post_dataContainer.post_meta.append(_postmeta_dataContainer)
                 _post.save()
-                
-                setattr(_post,'post_meta',_postmeta)
 
                 return (
-                    {"message":"successfully created!","post":PostSerializer(_post).data},
+                    {"message":"successfully created!","post":json.loads(json.dumps(PostSerializer(_post_dataContainer).data))},
                     status.HTTP_201_CREATED
                 )
 

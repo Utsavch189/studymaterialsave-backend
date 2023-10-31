@@ -3,7 +3,7 @@ from apps.posts.models.post import Post
 from apps.sections.models.section import Section
 
 class GetPostDTO(BaseModel):
-    section_id:constr(max_length=50,strip_whitespace=True,min_length=1)
+    section_id:constr(max_length=50,strip_whitespace=True)="None"
     post_id:constr(max_length=50,strip_whitespace=True)="None"
 
     @validator('post_id',allow_reuse=True,always=True)
@@ -20,9 +20,11 @@ class GetPostDTO(BaseModel):
     @validator('section_id',allow_reuse=True,always=True)
     def validate_id(cls,value):
         try:
-                if Section.objects.filter(section_id=value).exists():
-                    return value
-                else:
-                    raise Exception("section is not found!")
+                if value!="None":
+                    if Section.objects.filter(section_id=value).exists():
+                        return value
+                    else:
+                        raise Exception("section is not found!")
+                return None
         except Exception as e:
             raise Exception(str(e))

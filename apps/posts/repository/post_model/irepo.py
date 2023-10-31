@@ -5,7 +5,7 @@ from typing import List
 class I_PostModelRepo(ABC):
 
     @abstractmethod
-    def getAllPostMetaOfAPost(self,post_id:str)->List[PostMetaData]:
+    def getAPost(self,post_id:str)->PostData:
         pass
 
     @abstractmethod
