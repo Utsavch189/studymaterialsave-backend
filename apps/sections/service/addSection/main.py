@@ -15,6 +15,7 @@ class AddSectionService:
                 section_id=uuid.uuid1(),
                 section_name=dto.section_name,
                 section_about=dto.section_about,
+                visibility=dto.visibility,
                 created_at=timezone.now()
             )
             _section.save()

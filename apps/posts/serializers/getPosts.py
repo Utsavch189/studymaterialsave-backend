@@ -13,5 +13,6 @@ class PostSerializer(serializers.Serializer):
     title=serializers.CharField()
     about=serializers.CharField()
     notes=serializers.CharField()
+    visibility=serializers.CharField()
     created_at=serializers.DateTimeField()
     post_meta=PostMetaSerializer(many=True)

@@ -15,7 +15,7 @@ class PostModelRepo(models.Manager,I_PostModelRepo):
             res:List[PostData]=[]
             track:dict={}
             with self.conn.cursor() as c:
-                c.execute("""SELECT post.post_id,post.title,post.about,post.notes,post.created_at,
+                c.execute("""SELECT post.post_id,post.title,post.about,post.notes,post.visibility,post.created_at,
                           postmeta.post_file_meta_id,postmeta.file_name,postmeta.file_url,postmeta.public_id,postmeta.resource_type,postmeta.types
                           FROM posts_post as post 
 
@@ -37,7 +37,8 @@ class PostModelRepo(models.Manager,I_PostModelRepo):
                             title=row[1],
                             about=row[2],
                             notes=row[3],
-                            created_at=row[4],
+                            visibility=row[4],
+                            created_at=row[5],
                         )
                         track[row[0]]=_postdata
                         res.append(_postdata)
@@ -62,7 +63,7 @@ class PostModelRepo(models.Manager,I_PostModelRepo):
         try:
             track:dict={}
             with self.conn.cursor() as c:
-                c.execute("""SELECT post.post_id,post.title,post.about,post.notes,post.created_at,
+                c.execute("""SELECT post.post_id,post.title,post.about,post.notes,post.visibility,post.created_at,
                           postmeta.post_file_meta_id,postmeta.file_name,postmeta.file_url,postmeta.public_id,postmeta.resource_type,postmeta.types
                           FROM posts_post as post 
 
@@ -81,7 +82,8 @@ class PostModelRepo(models.Manager,I_PostModelRepo):
                             title=row[1],
                             about=row[2],
                             notes=row[3],
-                            created_at=row[4],
+                            visibility=row[4],
+                            created_at=row[5],
                         )
                         track[row[0]]=_postdata
 

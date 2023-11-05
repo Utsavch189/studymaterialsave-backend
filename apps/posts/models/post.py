@@ -9,6 +9,7 @@ class Post(models.Model):
     title=models.CharField(max_length=50,blank=True,null=True)
     about=models.CharField(max_length=150,blank=True,null=True)
     notes=models.TextField()
+    visibility=models.CharField(max_length=10,null=True,blank=True)
     created_at=models.DateTimeField(default=datetime.now())
 
     repo=PostModelRepo

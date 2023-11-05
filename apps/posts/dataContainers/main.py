@@ -17,5 +17,6 @@ class PostData:
     title:str=field(default_factory=str)
     about:str=field(default_factory=str)
     notes:str=field(default_factory=str)
+    visibility:str=field(default_factory=str)
     created_at:datetime=field(default_factory=datetime)
     post_meta:List[PostMetaData]=field(default_factory=list)

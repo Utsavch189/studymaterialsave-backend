@@ -7,5 +7,5 @@ class EmailService:
         self.mail=Email(subject,mail_sender,mail_receiver,template,context)
     
     def send(self):
-        return Thread(inst=self.mail).start()
+        return Thread(callable=self.mail.sends,args=('hu','ki')).start()
     

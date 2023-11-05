@@ -9,7 +9,7 @@ from django.db import transaction
 import uuid
 from core.utils.cdn.main import CDN
 import concurrent.futures
-from threading import Thread
+from core.utils.threads.thread import Thread
 
 class RegisterMainService:
 
@@ -102,7 +102,7 @@ class RegisterMainService:
             }
             return (data,status.HTTP_201_CREATED)
         except Exception as e:
-            t=Thread(target=self._cdn.delete,args=(_result['public_id'],
+            t=Thread(callable=self._cdn.delete,args=(_result['public_id'],
                 _result['resource_type'],
                 _result['type']))
             t.start()

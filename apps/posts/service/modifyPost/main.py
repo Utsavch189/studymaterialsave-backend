@@ -19,6 +19,7 @@ class ModifyPostService:
             post.title=self._dto.title
             post.about=self._dto.about
             post.notes=self._dto.notes
+            post.visibility=self._dto.visibility
             post.save()
 
             _updated_data=self._getAPost(self._dto.post_id)

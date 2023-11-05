@@ -11,6 +11,7 @@ class ModifySectionService:
                 section=Section.objects.get(section_id=dto.section_id)
                 section.section_name=dto.section_name
                 section.section_about=dto.section_about
+                section.visibility=dto.visibility
                 _data=SectionReturnRespSerializer(section).data
                 section.save()
                 return ({"section":_data,"message":"modified!"},status.HTTP_202_ACCEPTED)

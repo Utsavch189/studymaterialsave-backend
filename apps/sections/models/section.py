@@ -8,6 +8,7 @@ class Section(models.Model):
     section_id=models.CharField(max_length=50,primary_key=True,default="")
     section_name=models.CharField(max_length=100,null=True,blank=True)
     section_about=models.CharField(max_length=150,null=True,blank=True)
+    visibility=models.CharField(max_length=10,null=True,blank=True)
     created_at=models.DateTimeField(default=datetime.now())
 
     repo=SectionModelRepo

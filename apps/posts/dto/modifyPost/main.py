@@ -1,11 +1,14 @@
 from pydantic import BaseModel,validator,constr
 from apps.posts.models.post import Post
 
+VISIBILITY=['PUBLIC','PRIVATE']
+
 class ModifyPostDTO(BaseModel):
     post_id:constr(min_length=1,max_length=50,strip_whitespace=True)
     title:constr(min_length=1,max_length=50,strip_whitespace=True)
     about:constr(min_length=1,max_length=150,strip_whitespace=True)
-    notes:constr(min_length=1,strip_whitespace=True)=None
+    visibility:constr(max_length=10,strip_whitespace=True)
+    notes:constr(min_length=1,strip_whitespace=True)
 
     @validator('post_id',allow_reuse=True,always=True)
     def validate_post_id(cls,value):
@@ -28,3 +31,9 @@ class ModifyPostDTO(BaseModel):
                 return value
         except Exception as e:
             raise Exception(str(e))
+    
+    @validator('visibility',allow_reuse=True,always=True)
+    def visibility_validate(cls,value):
+        if not value.upper() in VISIBILITY:
+            raise Exception('visibility should be either public or private!')
+        return value.upper()

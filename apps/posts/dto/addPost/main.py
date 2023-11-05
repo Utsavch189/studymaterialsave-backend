@@ -8,12 +8,14 @@ files=[
     {"file_name":...,"file_b64":...,"file_type":...}
 ]
 """
+VISIBILITY=['PUBLIC','PRIVATE']
 
 class AddPostDTO(BaseModel):
     section_id:constr(min_length=1,max_length=50,strip_whitespace=True)
     title:constr(min_length=1,max_length=50,strip_whitespace=True)
     about:constr(min_length=1,max_length=150,strip_whitespace=True)
-    files:conlist(dict,max_length=5)=[]
+    visibility:constr(max_length=10,strip_whitespace=True)='PUBLIC'
+    files:conlist(dict)=[]
     notes:constr(min_length=1,strip_whitespace=True)=None
 
     @validator('title',allow_reuse=True,always=True)
@@ -49,3 +51,9 @@ class AddPostDTO(BaseModel):
             return None
         except Exception as e:
             raise Exception(str(e))
+    
+    @validator('visibility',allow_reuse=True,always=True)
+    def visibility_validate(cls,value):
+        if not value.upper() in VISIBILITY:
+            raise Exception('visibility should be either public or private!')
+        return value.upper()

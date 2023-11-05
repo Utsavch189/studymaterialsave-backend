@@ -27,6 +27,7 @@ class AddPostService:
                 title=self._dto.title,
                 about=self._dto.about,
                 notes=self._dto.notes,
+                visibility=self._dto.visibility,
                 created_at=timezone.now()
             )
             return _post
