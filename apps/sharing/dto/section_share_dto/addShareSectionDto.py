@@ -2,12 +2,12 @@ from pydantic import BaseModel,validator,constr
 from apps.sections.models.section import Section
 from apps.auths.models.user import User
 
-class AddShareDTO(BaseModel):
-    to_user:constr(min_length=1,max_length=50,strip_whitespace=True) # take id
+class AddShareSectionDTO(BaseModel):
+    user:constr(min_length=1,max_length=50,strip_whitespace=True) # take id
     section:constr(min_length=1,max_length=50,strip_whitespace=True) # take id
 
-    @validator('to_user',allow_reuse=True,always=True)
-    def validate_to_user(cls,value):
+    @validator('user',allow_reuse=True,always=True)
+    def validate_user(cls,value):
         try:
             if User.objects.filter(username=value).exists():
                 return User.objects.get(username=value)

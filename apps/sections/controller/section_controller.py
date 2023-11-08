@@ -34,12 +34,12 @@ class SectionController(APIView):
     @log(logger=logger)
     def put(self,request):
         _dto=ModifySectionDTO(**request.data)
-        message,status=ModifySectionService().modify(_dto)
+        message,status=ModifySectionService().modify(_dto,request)
         return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def delete(self,request):
         _dto=DeleteSectionDTO(**request.data)
-        message,status=DeleteSectionService().delete(_dto)
+        message,status=DeleteSectionService().delete(_dto,request)
         return Response(message,status=status,request=request)

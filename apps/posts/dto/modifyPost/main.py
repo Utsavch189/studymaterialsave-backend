@@ -15,7 +15,7 @@ class ModifyPostDTO(BaseModel):
         try:
             if not Post.objects.filter(post_id=value).exists():
                 raise Exception("post id not found!")
-            return value
+            return Post.objects.get(post_id=value)
         except Exception as e:
             raise Exception(str(e))
     

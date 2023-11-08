@@ -13,16 +13,20 @@ class ModifyPostService:
     def _getAPost(self,post_id:str)->PostData:
         return Post.repo().getAPost(post_id=post_id)
     
-    def modify(self)->tuple:
+    def modify(self,request:object)->tuple:
         try:
-            post=Post.objects.get(post_id=self._dto.post_id)
-            post.title=self._dto.title
-            post.about=self._dto.about
-            post.notes=self._dto.notes
-            post.visibility=self._dto.visibility
-            post.save()
+            _post=self._dto.post_id
 
-            _updated_data=self._getAPost(self._dto.post_id)
+            if request.User.username != _post.section.user.username:
+                raise Exception("you can't modify this!")
+
+            _post.title=self._dto.title
+            _post.about=self._dto.about
+            _post.notes=self._dto.notes
+            _post.visibility=self._dto.visibility
+            _post.save()
+
+            _updated_data=self._getAPost(_post.post_id)
 
             return (
                 {"message":"updated!","post":json.loads(json.dumps(PostSerializer(_updated_data).data))},

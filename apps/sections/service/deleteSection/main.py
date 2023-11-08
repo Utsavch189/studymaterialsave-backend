@@ -4,9 +4,12 @@ from apps.sections.dto.deleteSection.main import DeleteSectionDTO
 
 class DeleteSectionService:
 
-    def delete(self,dto:DeleteSectionDTO)->tuple:
+    def delete(self,dto:DeleteSectionDTO,request:object)->tuple:
         try:
-            Section.objects.get(section_id=dto.section_id).delete()
+            _section=dto.section_id
+            if request.User.username != _section.user.username:
+                raise Exception("you can't delete this!")
+            _section.delete()
             return ({"message":"deleted!"},status.HTTP_202_ACCEPTED) 
         except Exception as e:
             raise Exception(str(e))

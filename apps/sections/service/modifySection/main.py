@@ -5,17 +5,20 @@ from apps.sections.serializers.sectionReturnData.main import SectionReturnRespSe
 
 class ModifySectionService:
 
-    def modify(self,dto:ModifySectionDTO)->tuple:
+    def modify(self,dto:ModifySectionDTO,request:object)->tuple:
         try:
-            if Section.objects.filter(section_id=dto.section_id).exists():
-                section=Section.objects.get(section_id=dto.section_id)
-                section.section_name=dto.section_name
-                section.section_about=dto.section_about
-                section.visibility=dto.visibility
-                _data=SectionReturnRespSerializer(section).data
-                section.save()
-                return ({"section":_data,"message":"modified!"},status.HTTP_202_ACCEPTED)
+            _section=dto.section_id
+
+            if request.User.username != _section.user.username:
+                raise Exception("you can't modify this!")
             
-            return ({"message":"not found!"},status.HTTP_404_NOT_FOUND)
+            _section=Section.objects.get(section_id=dto.section_id)
+            _section.section_name=dto.section_name
+            _section.section_about=dto.section_about
+            _section.visibility=dto.visibility
+            _data=SectionReturnRespSerializer(_section).data
+            _section.save()
+            return ({"section":_data,"message":"modified!"},status.HTTP_202_ACCEPTED)
+        
         except Exception as e:
             raise Exception(str(e))

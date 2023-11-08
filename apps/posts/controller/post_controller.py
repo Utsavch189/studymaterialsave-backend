@@ -36,12 +36,12 @@ class PostController(APIView):
     @log(logger=logger)
     def put(self,request):
         _dto=ModifyPostDTO(**request.data)
-        message,status=ModifyPostService(_dto).modify()
+        message,status=ModifyPostService(_dto).modify(request)
         return Response(message,status=status,request=request)
 
     @handel_exception
     @log(logger=logger)
     def delete(self,request):
         _dto=DeletePostDTO(**request.data)
-        message,status=DeletePostService(_dto).delete()
+        message,status=DeletePostService(_dto).delete(request)
         return Response(message,status=status,request=request)

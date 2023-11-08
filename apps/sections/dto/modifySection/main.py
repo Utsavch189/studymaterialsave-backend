@@ -14,7 +14,7 @@ class ModifySectionDTO(BaseModel):
         try:
             if value:
                 if Section.objects.filter(section_id=value).exists():
-                    return value
+                    return Section.objects.get(section_id=value)
                 else:
                     raise Exception("section is not found!")
         except Exception as e:

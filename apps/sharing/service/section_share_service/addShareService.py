@@ -1,12 +1,14 @@
 from apps.sharing.models.sharedSections import SharedSection
 from rest_framework import status
-from apps.sharing.dto.section_share_dto.addShareDto import AddShareDTO
+from apps.sharing.dto.section_share_dto.addShareSectionDto import AddShareSectionDTO
 from django.utils import timezone
 from apps.sharing.serializer.section_share_serializer.main import SharedSectionSerializer 
+import uuid
+from datetime import datetime
 
-class AddShareService:
+class AddShareSectionService:
 
-    def __init__(self,dto:AddShareDTO) -> None:
+    def __init__(self,dto:AddShareSectionDTO) -> None:
         self._dto=dto
     
     def add(self,request:object)->tuple:
@@ -17,7 +19,8 @@ class AddShareService:
                 raise Exception("you can not share this!")
             
             _shared_section=SharedSection(
-                to_user=self._dto.to_user,
+                share_id=uuid.uuid3(namespace=uuid.NAMESPACE_DNS,name=str(datetime.now())),
+                user=self._dto.user,
                 from_user=_user,
                 section=self._dto.section,
                 shared_at=timezone.now()
