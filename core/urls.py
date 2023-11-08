@@ -41,4 +41,5 @@ urlpatterns = [
     path('api/v1/auth/',include('apps.auths.urls')),
     path('api/v1/section/',include('apps.sections.urls')),
     path('api/v1/post/',include('apps.posts.urls')),
+    path('api/v1/shares/',include('apps.sharing.urls')),
 ]

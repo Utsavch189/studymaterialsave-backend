@@ -1,7 +1,0 @@
-INFO : [05/Nov/2023 18:27:19 logger 7 11188 8 package : apps.auths.controller.register_controller --> position : Register.post]
-ERROR : [05/Nov/2023 18:27:19 logger 10 11188 8 package : apps.auths.controller.register_controller --> position : Register.post --> exception : user already exists!]
-INFO : [05/Nov/2023 18:27:51 logger 7 11188 8 package : apps.auths.controller.register_controller --> position : Register.post]
-INFO : [05/Nov/2023 18:29:56 logger 7 13516 12340 package : apps.auths.controller.register_controller --> position : Register.post]
-INFO : [05/Nov/2023 18:46:25 logger 7 14092 7856 package : apps.auths.controller.login_controller --> position : Login.post]
-INFO : [05/Nov/2023 18:46:46 logger 7 14092 7856 package : apps.sections.controller.section_controller --> position : SectionController.post]
-INFO : [05/Nov/2023 18:46:59 logger 7 14092 7856 package : apps.sections.controller.section_controller --> position : SectionController.get]

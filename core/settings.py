@@ -39,12 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'django_crontab',
+    'cloudinary_storage',
+    'cloudinary',
     'dbbackup',
     'rest_framework',
     'corsheaders',
     'apps.auths.apps.AuthConfig',
     'apps.posts.apps.PostsConfig',
     'apps.sections.apps.SectionsConfig',
+    'apps.sharing.apps.SharingConfig',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +80,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dcf6uk047',
+    'API_KEY': '176572318442856',
+    'API_SECRET': 'C0hg2pOkd-7MoOdoeXLcF-RMHTk'
+}
 
 
 # Database
@@ -154,7 +163,6 @@ SESSION_COOKIE_HTTPONLY=True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
 LOGGING ={
     'version':1,
     "disable_existing_loggers": False,
@@ -167,7 +175,7 @@ LOGGING ={
     'handlers':{
         'file':{
             'class': 'logging.FileHandler',
-            'filename':'./logs/'+str(datetime.date.today())+'.log',
+            'filename':'logs/'+str(datetime.date.today())+'.log',
             'formatter':'myforamt'
         }
     },

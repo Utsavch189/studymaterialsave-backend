@@ -2,7 +2,7 @@ from apps.auths.models.user import User
 from apps.auths.models.usermeta import UserMeta
 from apps.auths.models.profile_pic_meta import ProfilePicMeta
 from apps.auths.dto.register.main_dto import RegisterMainDTO
-from apps.auths.serializer.register.main import RegisterSerializer,RegisterUserMetaSerializer
+from apps.auths.serializer.register.main import UserSerializer
 from rest_framework import status
 from django.utils import timezone
 from django.db import transaction
@@ -97,8 +97,8 @@ class RegisterMainService:
     
             data={
                 "message":"account is creatd!",
-                "user":RegisterSerializer(_user).data,
-                "usermeta":RegisterUserMetaSerializer(_usermeta).data
+                "user":UserSerializer(_user).data,
+                
             }
             return (data,status.HTTP_201_CREATED)
         except Exception as e:
