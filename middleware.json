@@ -2,6 +2,7 @@
     "paths": [
         { "app": "apps.sections", "endpoint": "section" },
         { "app": "apps.posts", "endpoint": "post" },
-        { "app": "apps.users", "endpoint": "shares" }
+        { "app": "apps.sharing", "endpoint": "shares" },
+        { "app": "apps.users", "endpoint": "users" }
     ]
 }

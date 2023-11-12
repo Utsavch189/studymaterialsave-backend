@@ -24,7 +24,7 @@ class SectionShareController(APIView):
     def delete(self,request):
         _dto=DeleteASharedSectionDTO(**request.data)
         _shared_section=_dto.share_id
-        if request.User.username != _shared_section.to_user.username:
+        if request.User.username != _shared_section.user.username:
             raise Exception("you can't delete this!")
         _shared_section.delete()
         return Response({"message":"successfully deleted!"},status=status.HTTP_202_ACCEPTED,request=request)

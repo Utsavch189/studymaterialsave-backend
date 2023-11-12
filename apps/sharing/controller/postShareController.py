@@ -6,6 +6,7 @@ from core.utils.decorators.logger import log
 import logging
 from apps.sharing.dto.post_share_dto.addSharePostDto import AddSharePostDTO
 from apps.sharing.service.post_share_service.addShareService import AddSharePostService
+from apps.sharing.dto.post_share_dto.deleteSharedPostDto import DeleteASharedPostDTO
 
 logger=logging.getLogger('mylogger')
 
@@ -21,4 +22,9 @@ class PostShareController(APIView):
     @handel_exception
     @log(logger=logger)
     def delete(self,request):
-        pass
+        _dto=DeleteASharedPostDTO(**request.data)
+        _shared_post=_dto.share_id
+        if request.User.username != _shared_post.section.user.username:
+            raise Exception("you can't delete this!")
+        _shared_post.delete()
+        return Response({"message":"successfully deleted!"},status=status.HTTP_202_ACCEPTED,request=request)

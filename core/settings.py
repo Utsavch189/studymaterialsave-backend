@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'apps.posts.apps.PostsConfig',
     'apps.sections.apps.SectionsConfig',
     'apps.sharing.apps.SharingConfig',
+    'apps.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
