@@ -1,0 +1,15 @@
+INFO : [13/Nov/2023 12:51:17 logger 7 9876 9232 package : apps.auths.controller.login_controller --> position : Login.post]
+INFO : [13/Nov/2023 12:51:21 logger 7 9876 9232 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+INFO : [13/Nov/2023 12:52:10 logger 7 1972 3740 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+INFO : [13/Nov/2023 12:53:23 logger 7 14152 4544 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+ERROR : [13/Nov/2023 12:53:23 logger 10 14152 4544 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get --> exception : Got AttributeError when attempting to get a value for field `share_id` on serializer `SharedPostDataSerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `PostData` instance.
+Original exception text was: 'PostData' object has no attribute 'share_id'.]
+INFO : [13/Nov/2023 12:55:03 logger 7 12932 9432 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+INFO : [13/Nov/2023 12:56:22 logger 7 9828 5748 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+ERROR : [13/Nov/2023 12:56:22 logger 10 9828 5748 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get --> exception : name 'track' is not defined]
+INFO : [13/Nov/2023 12:56:40 logger 7 9828 5748 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+ERROR : [13/Nov/2023 12:56:40 logger 10 9828 5748 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get --> exception : name 'track' is not defined]
+INFO : [13/Nov/2023 12:57:06 logger 7 10296 8012 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+INFO : [13/Nov/2023 12:57:58 logger 7 3096 10464 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]
+INFO : [13/Nov/2023 13:01:16 logger 7 13536 13212 package : apps.users.controller.getAllSharesController --> position : GetAllSharesController.get]

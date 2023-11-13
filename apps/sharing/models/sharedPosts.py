@@ -2,6 +2,7 @@ from apps.auths.models.user import User
 from apps.posts.models.post import Post
 from django.db import models
 from datetime import datetime
+from apps.users.repository.getAllSharedPostRepo.repo import GetAllSharedPostRepo
 
 class SharedPost(models.Model):
     share_id=models.CharField(max_length=50,primary_key=True,default="")
@@ -9,6 +10,8 @@ class SharedPost(models.Model):
     from_user=models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='from_user_post')
     post=models.ForeignKey(Post,on_delete=models.DO_NOTHING)
     shared_at=models.DateTimeField(default=datetime.now())
+
+    repo=GetAllSharedPostRepo
 
 
     def __str__(self) -> str:

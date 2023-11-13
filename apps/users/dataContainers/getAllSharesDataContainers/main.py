@@ -1,7 +1,7 @@
 from dataclasses import dataclass,field
 from datetime import datetime
 from apps.sections.dataContainers.main import AllSections
-
+from apps.posts.dataContainers.main import PostMetaData,PostData
 
 @dataclass
 class UserMeta:
@@ -28,6 +28,6 @@ class SharedSectionDataContainer:
 @dataclass
 class SharedPostDataContainer:
     share_id:str=field(default_factory=str)
-    from_user=None
-    post=None
+    from_user:UserData=field(default_factory=object)
+    post:PostData=field(default_factory=object)
     shared_at:datetime=field(default_factory=datetime)

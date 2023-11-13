@@ -3,8 +3,7 @@ from apps.users.dataContainers.getAllSharesDataContainers.main import SharedSect
 from typing import List
 from apps.users.repository.getAllSharedSectionRepos.irepo import I_GetAllSharedSectionRepo
 from apps.sections.dataContainers.main import AllSections
-from apps.users.serializers.getAllSharesSerializer.main import SharedSectionDataSerializer
-import json
+
 
 class  GetAllSharedSectionRepo(I_GetAllSharedSectionRepo,models.Manager):
 
@@ -12,12 +11,12 @@ class  GetAllSharedSectionRepo(I_GetAllSharedSectionRepo,models.Manager):
         from django.db import connection
         self.conn=connection
         
-    def get_allSections(self, user_id: str) -> List[SharedSectionDataSerializer]:
+    def get_allSections(self, user_id: str) -> List[SharedSectionDataContainer]:
         try:
-            res:List[SharedSectionDataSerializer]=[]
+            res:List[SharedSectionDataContainer]=[]
             with self.conn.cursor() as c:
                 c.execute("""
-                            select shared_sections.share_id,
+                            Select shared_sections.share_id,
                             shared_sections.from_user_id,from_user.full_name,from_user.email,from_user.phone,
                             from_user_meta.meta_id,from_user_meta.profile_pic_url,from_user_meta.doj,
                             shared_sections.section_id,section.section_name,section.section_about,section.visibility,section.created_at,
@@ -49,7 +48,7 @@ class  GetAllSharedSectionRepo(I_GetAllSharedSectionRepo,models.Manager):
                     _sharedSectionData=SharedSectionDataContainer(
                         share_id=row[0],from_user=_userdata,section=_section,shared_at=row[13]
                     )
-                    res.append(json.loads(json.dumps(SharedSectionDataSerializer(_sharedSectionData).data)))
+                    res.append(_sharedSectionData)
             return res 
         except Exception as e:
             raise Exception(str(e))
