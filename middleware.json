@@ -1,5 +1,6 @@
 {
     "paths": [
+        { "app": "apps.auths", "endpoint": "refresh-token" },
         { "app": "apps.sections", "endpoint": "section" },
         { "app": "apps.posts", "endpoint": "post" },
         { "app": "apps.sharing", "endpoint": "shares" },
