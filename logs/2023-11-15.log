@@ -7,3 +7,35 @@ INFO : [15/Nov/2023 12:31:43 logger 7 10864 5624 package : apps.auths.controller
 INFO : [15/Nov/2023 12:32:07 logger 7 10864 5624 package : apps.users.controller.getUserController --> position : GetAUser.get]
 INFO : [15/Nov/2023 12:32:29 logger 7 10864 5624 package : apps.users.controller.getUserController --> position : GetAUser.get]
 INFO : [15/Nov/2023 12:33:02 logger 7 10864 5624 package : apps.users.controller.getUserController --> position : GetAUser.get]
+INFO : [15/Nov/2023 13:24:10 logger 7 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:24:10 logger 10 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post --> exception : 2 validation errors for RegisterMainDTO
+confirm_password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)
+password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)]
+INFO : [15/Nov/2023 13:24:53 logger 7 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:24:53 logger 10 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post --> exception : 2 validation errors for RegisterMainDTO
+confirm_password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)
+password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)]
+INFO : [15/Nov/2023 13:25:14 logger 7 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:25:14 logger 10 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post --> exception : 2 validation errors for RegisterMainDTO
+confirm_password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)
+password
+  ensure this value has at most 10 characters (type=value_error.any_str.max_length; limit_value=10)]
+INFO : [15/Nov/2023 13:25:58 logger 7 14028 8736 package : apps.auths.controller.register_controller --> position : Register.post]
+INFO : [15/Nov/2023 13:28:33 logger 7 14160 3504 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:28:36 logger 10 14160 3504 package : apps.auths.controller.register_controller --> position : Register.post --> exception : __init__() missing 1 required positional argument: 'args']
+INFO : [15/Nov/2023 13:30:01 logger 7 14216 3404 package : apps.auths.controller.register_controller --> position : Register.post]
+INFO : [15/Nov/2023 13:30:23 logger 7 14216 3404 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:30:23 logger 10 14216 3404 package : apps.auths.controller.register_controller --> position : Register.post --> exception : user already exists!]
+INFO : [15/Nov/2023 13:31:11 logger 7 14216 3404 package : apps.auths.controller.register_controller --> position : Register.post]
+INFO : [15/Nov/2023 13:42:30 logger 7 14216 2172 package : apps.auths.controller.register_controller --> position : Register.post]
+INFO : [15/Nov/2023 13:47:36 logger 7 14216 9184 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:47:36 logger 10 14216 9184 package : apps.auths.controller.register_controller --> position : Register.post --> exception : email already exists!]
+INFO : [15/Nov/2023 13:47:59 logger 7 14216 9184 package : apps.auths.controller.register_controller --> position : Register.post]
+INFO : [15/Nov/2023 13:50:37 logger 7 14216 11460 package : apps.auths.controller.register_controller --> position : Register.post]
+ERROR : [15/Nov/2023 13:50:37 logger 10 14216 11460 package : apps.auths.controller.register_controller --> position : Register.post --> exception : user already exists!]
+INFO : [15/Nov/2023 13:51:44 logger 7 14216 11460 package : apps.auths.controller.register_controller --> position : Register.post]

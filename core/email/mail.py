@@ -10,7 +10,7 @@ class Email:
         self.mail_receiver=mail_receiver
         self.templates = get_template(template).render(context)
     
-    def sends(self):
+    def sends(self,*args, **kwargs):
         try:
             
             email=EmailMessage(self.subject,self.templates,self.mail_sender,[self.mail_receiver])
