@@ -4,13 +4,15 @@ from apps.auths.dto.login.main_dto import LoginMainDTO
 from core.utils.decorators.handelException import handel_exception
 from core.utils.decorators.logger import log
 from rest_framework import status
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 import logging
 
 logger=logging.getLogger('mylogger')
 
 class Login(APIView):
-    
+
     @handel_exception
     @log(logger=logger)
     def post(self,request)->Response:

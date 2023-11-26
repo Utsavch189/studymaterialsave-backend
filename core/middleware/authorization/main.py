@@ -23,11 +23,21 @@ class Authorization:
     
     def hasToken(self,request):
         try:
-            if 'access_token' in request.META.get('HTTP_COOKIE').replace(';','').split(' ')[0].split('=') and 'refresh_token' in request.META.get('HTTP_COOKIE').replace(';','').split(' ')[1].split('='):
-                return True
-            else:
+            _cookie_contents=request.META.get('HTTP_COOKIE').replace(';','').split(' ')
+            _tokens={}
+            for i in _cookie_contents:
+                _contents=i.split('=')
+                if _contents[0]=='access_token':
+                    _tokens['access_token']=_contents[1]
+                elif _contents[0]=='refresh_token':
+                    _tokens['refresh_token']=_contents[1]
+
+            if _tokens.get('access_token') or _tokens.get('refresh_token'):
+                return _tokens
+            else:      
                return False
-        except:
+        except Exception as e:
+            print(e)
             return False
         
     def _notadmin(self,request):
@@ -40,10 +50,11 @@ class Authorization:
         if self._notadmin(request):
             loc=self.get_exact_loc(request=request)
             if loc:
-                if not self.hasToken(request=request):
+                _tokens=self.hasToken(request=request)
+                if not _tokens:
                     return JsonResponse({'message': 'no token found!',"timestamp":datetime.timestamp(datetime.now())}, status=403)
                 else:
-                    stat=TokenValidity().validate(request=request)
+                    stat=TokenValidity().validate(request=request,tokens=_tokens)
                     if not stat:
                         return Response({'message': 'unauthorized!'}, status=403,request=request)
         

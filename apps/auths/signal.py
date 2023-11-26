@@ -9,7 +9,7 @@ def post_signals(sender,instance,**kwargs):
     context={
         "name":instance.full_name,
         "header":"Account Created Successfully!",
-        "body":"Save Your Study Materials now effectively!"
+        "body":f"Save Your Study Materials now effectively!</br> <b>Username : {instance.username}</b>"
     }
     email=EmailService(
         subject="Thank You For Account Creation!",

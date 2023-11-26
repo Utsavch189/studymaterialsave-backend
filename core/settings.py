@@ -105,6 +105,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': [
         'rest_framework.parsers.JSONParser'
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication'
+    ],
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
@@ -155,10 +158,7 @@ EMAIL_HOST_USER="utsavpokemon9000chatterjee@gmail.com"
 EMAIL_HOST_PASSWORD="mrrydilzvjzazkud"
 
 CORS_ALLOW_CREDENTIALS = True
-CSRF_COOKIE_SAMESITE='Lax'
-SESSION_COOKIE_SAMESITE='Lax'
-CSRF_COOKIE_HTTPONLY=True
-SESSION_COOKIE_HTTPONLY=True
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -197,3 +197,13 @@ CORS_ORIGIN_ALLOW_ALL=False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:3000',
   )
+CORS_ALLOW_HEADERS = (
+    "accept",
+    "authorization",
+    "content-type",
+    "user-agent",
+    "x-csrftoken",
+    "x-requested-with",
+    "x-userid"
+)
+CSRF_TRUSTED_ORIGINS=['http://localhost:3000']

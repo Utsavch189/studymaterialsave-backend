@@ -12,7 +12,7 @@ class Response(Response):
         if request!=None and request.META.get('login'):
             tokens=JwtBuilder(payload={
                "sub":request.META.get('sub')
-           },access_token_exp=10,refresh_token_exp=15).get_token()
+           },access_token_exp=10,refresh_token_exp=25).get_token()
 
             _data={**_data,"login":"true","access_token_exp":tokens[0]['access_token_exp'],"refresh_token_exp":tokens[1]['refresh_token_exp']}
             _resp.__init__(_data, status, template_name, headers, exception, content_type)
