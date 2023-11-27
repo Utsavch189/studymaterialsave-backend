@@ -6,7 +6,7 @@ VISIBILITY=['PUBLIC','PRIVATE']
 class AddSectionDTO(BaseModel):
     section_name:constr(min_length=1,max_length=100,strip_whitespace=True)
     visibility:constr(max_length=10,strip_whitespace=True)='PUBLIC'
-    section_about:constr(min_length=1,max_length=150,strip_whitespace=True)=None
+    section_about:constr(max_length=150,strip_whitespace=True)=""
 
     @validator('section_name',allow_reuse=True,always=True)
     def section_name_validate(cls,value):
