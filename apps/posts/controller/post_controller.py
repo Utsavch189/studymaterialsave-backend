@@ -16,6 +16,18 @@ from apps.posts.service.modifyPost.main import ModifyPostService
 
 logger=logging.getLogger('mylogger')
 
+class PostGetController(APIView):
+    @handel_exception
+    @log(logger=logger)
+    def get(self,request,section_id,post_id):
+        print(section_id,post_id)
+        _dto=GetPostDTO(**{
+            "section_id":section_id,
+            "post_id":post_id
+        })
+        message,status=GetPostService(_dto).get()
+        return Response(message,status=status,request=request)
+
 class PostController(APIView):
 
     @handel_exception
