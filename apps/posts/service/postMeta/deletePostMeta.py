@@ -16,7 +16,7 @@ class DeletePostMetaService:
     
     def delete(self)->tuple:
         try:
-            PostFileMeta.objects.get(post_file_id=self._dto.post_meta_id).delete()
+            PostFileMeta.objects.get(post_file_meta_id=self._dto.post_meta_id).delete()
             _post=self._getAPost(post_id=self._dto.post_id)
             return (
                 {"message":"deleted!","post":json.loads(json.dumps(PostSerializer(_post).data))},

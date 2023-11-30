@@ -196,6 +196,7 @@ APPEND_SLASH=False
 CORS_ORIGIN_ALLOW_ALL=False
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:3000',
+ 'http://localhost:3001' 
   )
 CORS_ALLOW_HEADERS = (
     "accept",
@@ -206,4 +207,5 @@ CORS_ALLOW_HEADERS = (
     "x-requested-with",
     "x-userid"
 )
-CSRF_TRUSTED_ORIGINS=['http://localhost:3000']
+CSRF_TRUSTED_ORIGINS=['http://localhost:3000','http://localhost:3001'
+]

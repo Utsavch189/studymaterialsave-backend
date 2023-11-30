@@ -18,7 +18,7 @@ class DeletePostMetaDTO(BaseModel):
     @validator('post_meta_id',allow_reuse=True,always=True)
     def validate_postMetaId(cls,value):
         try:
-            if PostFileMeta.objects.filter(post_meta_id=value).exists():
+            if PostFileMeta.objects.filter(post_file_meta_id=value).exists():
                 return value
             else:
                 raise Exception("post meta id is not found!")
