@@ -1,0 +1,4 @@
+INFO : [30/Nov/2023 09:12:01 logger 7 13296 11072 package : apps.auths.controller.login_controller --> position : Login.post]
+INFO : [30/Nov/2023 09:12:06 logger 7 13296 11072 package : apps.auths.controller.refreshToken_controller --> position : RefreshToken.post]
+INFO : [30/Nov/2023 09:12:13 logger 7 13296 11072 package : apps.posts.controller.post_controller --> position : PostGetController.get]
+INFO : [30/Nov/2023 09:13:39 logger 7 11644 1364 package : apps.posts.controller.post_controller --> position : PostGetController.get]
