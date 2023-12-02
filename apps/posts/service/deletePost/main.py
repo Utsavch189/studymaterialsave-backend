@@ -18,7 +18,7 @@ class DeletePostService:
 
             return (
                 {"message":"deleted!"},
-                status.HTTP_204_NO_CONTENT
+                status.HTTP_202_ACCEPTED
             )
         except Exception as e:
             raise Exception(e)
