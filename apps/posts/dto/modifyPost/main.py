@@ -22,7 +22,8 @@ class ModifyPostDTO(BaseModel):
     @validator('title',allow_reuse=True,always=True)
     def title_validate(cls,value,values):
         try:
-            if Post.objects.get(post_id=values['post_id']).title!=value:
+            
+            if values['post_id'].title!=value:
                 if not Post.objects.filter(title=value).exists():
                     return value
                 else:

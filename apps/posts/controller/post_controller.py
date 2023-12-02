@@ -48,6 +48,7 @@ class PostController(APIView):
     @log(logger=logger)
     def put(self,request):
         _dto=ModifyPostDTO(**request.data)
+        print(_dto)
         message,status=ModifyPostService(_dto).modify(request)
         return Response(message,status=status,request=request)
 

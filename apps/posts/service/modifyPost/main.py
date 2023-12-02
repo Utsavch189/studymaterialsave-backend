@@ -20,6 +20,8 @@ class ModifyPostService:
             if request.User.username != _post.section.user.username:
                 raise Exception("you can't modify this!")
 
+            print(_post)
+
             _post.title=self._dto.title
             _post.about=self._dto.about
             _post.notes=self._dto.notes
