@@ -20,7 +20,7 @@ class DeletePostMetaService:
             _post=self._getAPost(post_id=self._dto.post_id)
             return (
                 {"message":"deleted!","post":json.loads(json.dumps(PostSerializer(_post).data))},
-                status.HTTP_204_NO_CONTENT
+                status.HTTP_202_ACCEPTED
             )
         except Exception as e:
             raise Exception(str(e))

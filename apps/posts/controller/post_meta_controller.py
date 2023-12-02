@@ -15,5 +15,6 @@ class PostMetaController(APIView):
     def delete(self,request):
         _dto=DeletePostMetaDTO(**request.data)
         message,status=DeletePostMetaService(_dto).delete()
+        print(message)
         return Response(message,status=status,request=request)
     
