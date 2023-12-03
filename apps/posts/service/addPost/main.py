@@ -80,6 +80,7 @@ class AddPostService:
                     title=_post.title,
                     about=_post.about,
                     notes=_post.notes,
+                    visibility=_post.visibility,
                     created_at=_post.created_at
                 )
 
