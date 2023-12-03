@@ -7,8 +7,8 @@ from apps.users.repository.getAllSharedPostRepo.repo import GetAllSharedPostRepo
 class SharedPost(models.Model):
     share_id=models.CharField(max_length=50,primary_key=True,default="")
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='to_user_post')
-    from_user=models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='from_user_post')
-    post=models.ForeignKey(Post,on_delete=models.DO_NOTHING)
+    from_user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='from_user_post')
+    post=models.ForeignKey(Post,on_delete=models.CASCADE)
     shared_at=models.DateTimeField(default=datetime.now())
 
     repo=GetAllSharedPostRepo

@@ -7,8 +7,8 @@ from apps.users.repository.getAllSharedSectionRepos.repo import GetAllSharedSect
 class SharedSection(models.Model):
     share_id=models.CharField(max_length=50,primary_key=True,default="")
     user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='to_user_section')
-    from_user=models.ForeignKey(User,on_delete=models.DO_NOTHING,related_name='from_user_section')
-    section=models.ForeignKey(Section,on_delete=models.DO_NOTHING)
+    from_user=models.ForeignKey(User,on_delete=models.CASCADE,related_name='from_user_section')
+    section=models.ForeignKey(Section,on_delete=models.CASCADE)
     shared_at=models.DateTimeField(default=datetime.now())
 
     repo=GetAllSharedSectionRepo
